@@ -1,0 +1,16 @@
+
+#hero-info {
+
+
+    text-align: center;  /* centrer le tout */
+    background-color: rgb(77, 31, 77);   /* couleur du background */
+    color: white;     /* couleur du texte  */
+    
+   
+    width: 100%;            /* longueur du bloc */
+    max-width: 600px;      /* largeur  du bloc */
+    margin: 50px auto;     /* pour centrer le bloc */
+
+    border-radius: 12px;   /* pour arrondir les bords */
+   
+}
