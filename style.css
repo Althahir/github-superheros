@@ -1,0 +1,67 @@
+body{
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    background-color: rgb(216, 225, 243);
+    font-family:monospace;
+
+}
+h1{
+    margin-bottom: 500px;
+    transition: all 0.3s ease-in-out;
+}
+h1:hover{
+    transform: scale(1.1);
+}
+
+
+#hero-info{
+    display: flex;
+    width: 100%;
+    justify-content:space-around;
+}
+
+
+.bouton{
+    background-color: white;
+    display: flex;
+    padding: 0 50px;
+    width: 150px;
+    text-decoration: none;
+    justify-content: center;
+    align-items: center;
+        border: 1px solid black;
+    border-radius: 10px;
+        color: black;
+        transition: 0.2s all ease-in-out;
+
+    /* background-color: red; */
+}
+.bouton:hover{
+    transform: scale(1.1);
+    background-color: rgb(143, 5, 5);
+    color: white;
+    box-shadow: 5px, 5px;
+    border: 1px solid white;
+}
+#spiderman, #thor, #joker, #batman, #ironman{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
+    font-weight: bold;
+    font-family: monospace;
+
+}
+
+#imgSpiderman,#imgThor,#imgJoker, #imgBatman, #imgIronman{
+    display: flex;
+        justify-content: center;
+    align-items: center;
+    width: 100px;
+    height: 100px;
+    
+}
