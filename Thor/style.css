@@ -11,6 +11,10 @@ body{
 #hero-info{
     width: 70%;
     text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     
 }
 
@@ -40,9 +44,12 @@ h1{
 .gras, #titre{
     color: white;
 }
+#contain{
+    width: 450px;
+}
 
 p{
     width: 100%;
     margin: 0;
-    text-align: center;
+    text-align: left;
 }
