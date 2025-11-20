@@ -25,6 +25,7 @@ fetch(apiUrl)
 
       const heroImageUrl = "https://corsproxy.io/?" + encodeURIComponent(data.image.url);
       document.getElementById("image").innerHTML= `<img src="${heroImageUrl}" alt="Thor">`;
+      document.getElementById("image1").innerHTML= `<img src="${heroImageUrl}" alt="Thor">`;
 
       const full_name = document.getElementById("full_name")
       full_name.innerHTML = data.biography['full-name']
