@@ -43,6 +43,8 @@ fetch(apiUrl)
 
 .catch(error => console.error('Erreur :', error)); // Gestion d'erreur
 
+
+//Exercice 1
 const dateActuelle =new Date();
 const seconde = dateActuelle.getSeconds();
  setTimeout(()=>{
@@ -57,4 +59,17 @@ const seconde = dateActuelle.getSeconds();
       .finally(() => console.log("Fin de la promesse"));
  },2000) 
 
+ //Exercice 2
+const newHero = {
+name: "Iron Man",
+power: "Armure high-tech"
+};
+fetch("https://reqres.in/api/users", {
+method: "POST",
+headers: { "Content-Type": "application/json" },
+body: JSON.stringify(newHero) // On transforme l’objet en texte JSON !
+})
+.then((res) => res.json())
+.then((data) => console.log("Héros créé :", data))
+.catch((err) => console.error("Erreur :", err));
     

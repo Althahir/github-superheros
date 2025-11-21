@@ -1,0 +1,20 @@
+[
+    {
+        "id":0,
+        "name":"Batman",
+        "power":"Richesse",
+        "city":"Gotham City"
+    },
+    {
+        "id":1,
+        "name":"Superman",
+        "power":"Vole",
+        "city":"Metropolis"
+    },
+    {
+        "id":2,
+        "name":"Thor",
+        "power":"Fort",
+        "city":"Asgard"
+    }
+]
