@@ -1,12 +1,8 @@
 body{
-    /* background-color: red; */
     display: flex;
     flex-direction: column;
-    /* width: 60vw; */
     justify-content: space-around;
     align-items: center;
-    overflow: hidden;
-    height: 100vh;
     background-color: rgba(128, 128, 128, 0.417);
     font-size: 1.2em;
 }
@@ -16,6 +12,10 @@ h1{
 #AddHeroArray{
     display: flex;
     flex-direction: column;
+    margin: 50px;
+    border: 1px solid black;
+    border-radius: 30px;
+    padding: 40px;
 }
 
 #AddHeroButton{
@@ -23,46 +23,39 @@ h1{
 }
 .HeroInput{
     margin-bottom: 10px;
-    border: none;
+    border: 1px solid transparent;
     height: 20px;
 }
 .HeroInputError{
-    margin-bottom: 10px;
     border: 1px solid red;
-    height: 20px;
 }
 #heroesList{
     width: 80vw;
-    height: 30vh;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    /* border: 1px solid black; */
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 30px; 
     border-radius: 30px;
-    /* background-color: rgb(231, 231, 144); */
-    /* box-shadow: 10px 10px 10px grey; */
-    margin: 50px;
+    margin: 50px auto; 
 }
 
-.hero-card{
+.hero-card {
     background-color: white;
     border: 1px solid black;
     border-radius: 20px;
-    padding: 50px;
+    padding: 20px; 
     text-align: center;
     box-shadow: 10px 10px 10px grey;
     font-size: 1.3em;
+}
 
-    button{
-        color: red;
-        border: 1px solid black;
-        border-radius: 10px;
-        padding-left: 30px;
-        padding-right: 30px;
-        padding-top: 5px;
-        padding-bottom: 5px;
-        font-size: 1em;
-    }
+.hero-card button {
+    color: red;
+    border: 1px solid black;
+    border-radius: 10px;
+    padding: 5px 30px; 
+    font-size: 1em;
+    transition: 0.3s all ease-in-out;
+    margin-top: 15px; 
 }
 
 .MessageOK{
@@ -83,7 +76,12 @@ h1{
     font-weight: bold;
     color:red;
     text-shadow: 2px 2px 2px rgb(130, 128, 128);
-    font-size: 0.9em;
+    font-size: 1.2em;
+}
+#recharge{
+    position: fixed;
+    top: 20px;
+    left: 20px;
 }
 #recharge, #AddHeroButton{
     padding-left: 20px;
@@ -91,7 +89,13 @@ h1{
     padding-top: 5px;
     padding-bottom: 5px;
     border-radius: 30px;
-    border: none;
+    border-color: transparent;
+    transition: all 0.3s ease-in-out;
+}
+#recharge:hover, #AddHeroButton:hover,.hero-card button:hover{
+    transform: scale(1.1);
+    border-color: black;
+    box-shadow: 8px 8px 8px grey;
 }
 
 #AddHeroButton{

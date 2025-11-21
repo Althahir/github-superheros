@@ -1,7 +1,6 @@
 const ajout=document.getElementById("AddHeroButton")
 const message=document.getElementById("message")
 const nomhero=document.getElementById("AddHeroName")
-// const inputname=document.getElementById("InputName")
 const pouvoirhero=document.getElementById("AddHeroPower")
 const villehero=document.getElementById("AddHeroCity")
 const recharge=document.getElementById("recharge")
@@ -24,8 +23,7 @@ const loadHeroes = () => {
       });
   }
 };
-
-function displayHeroes(heroes) {
+const displayHeroes=(heroes)=> {
 const container = document.getElementById('heroesList');
 container.innerHTML = '';
 heroes.forEach(hero => {
@@ -50,12 +48,11 @@ const deleteHero=(heroId)=>{
   displayHeroes(heroesFilter)
 
 }
-
 ajout.addEventListener("click",()=>{
 if(nomhero.value === "" || pouvoirhero.value === "" || villehero.value === "" ){
       message.classList.remove("MessageOK")
       message.classList.add("MessageKO")
-      message.innerHTML="Informations manquantes"
+      message.innerHTML="Infos manquantes"
       if(nomhero.value===""){
         nomhero.classList.add("HeroInputError");
       }
@@ -77,8 +74,20 @@ if(nomhero.value === "" || pouvoirhero.value === "" || villehero.value === "" ){
     const heroesJSON = localStorage.getItem("heroes");
     let NouvelId=0;
 
-  //  const heroesArray=JSON.parse(heroesAdd)
     heroes=JSON.parse(heroesJSON)
+    for (let a=0;a<heroes.length;a++){
+      if(  heroes[a].name.toLowerCase()==nomhero.value.toLowerCase()){
+        message.classList.add("MessageKO");
+        message.classList.remove("MessageOK");
+        message.innerHTML='Existe déjà';
+        setTimeout(() => {
+          message.innerHTML='';
+          message.classList.remove("MessageKO")
+          
+        }, 2000);
+        return
+      }
+    }
     heroes.forEach(el=>{
       NouvelId=el.id
     })
@@ -107,12 +116,13 @@ if(nomhero.value === "" || pouvoirhero.value === "" || villehero.value === "" ){
     }, 2000);
   }
 })
-
 recharge.addEventListener("click",()=>{
   localStorage.removeItem('heroes');
   loadHeroes()
 
 })
+
+
 
 loadHeroes()
 
