@@ -68,6 +68,8 @@ if(nomhero.value === "" || pouvoirhero.value === "" || villehero.value === "" ){
         nomhero.classList.remove("HeroInputError")
         pouvoirhero.classList.remove("HeroInputError")
         villehero.classList.remove("HeroInputError")
+        message.classList.remove("MessageKO")
+
       }, 2000);
   }
   else{

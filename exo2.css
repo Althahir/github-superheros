@@ -13,10 +13,10 @@ h1{
 #AddHeroArray{
     display: flex;
     flex-direction: column;
-    margin: 50px;
+    margin: 30px;
     border: 1px solid rgb(255, 255, 255);
     border-radius: 30px;
-    padding: 40px;
+    padding: 30px;
     background-color: grey;
 }
 
@@ -27,7 +27,11 @@ h1{
 .HeroInput{
     margin-bottom: 10px;
     border: 1px solid transparent;
-    height: 20px;
+    height: 30px;
+    width: 300px;
+    border-radius: 5px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color: black;
 }
 .HeroInputError{
     border: 1px solid red;
@@ -55,6 +59,12 @@ h1{
     background-color: white;
     border-color: white;
     color: black;
+    h3{
+        text-shadow: 0 0 5px red;
+    }
+    p{
+        text-shadow: 0 0 5px rgb(0, 0, 0);
+    }
 }
 .hero-card h3{
     color:red;
@@ -64,28 +74,29 @@ h1{
     border: 1px solid black;
     border-radius: 10px;
     padding: 5px 30px; 
-    font-size: 1em;
+    font-size: 0.97em;
     transition: 0.3s all ease-in-out;
     margin-top: 15px; 
 }
 
-.MessageOK{
+.Message{
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
     font-weight: bold;
+    border-radius: 5px;
+    height: 30px;
+    background-color: grey;
+    margin: 15px 0;
+}
+.MessageOK{
+    background-color: white;
     color:green;
-    font-size: 0.9em;
 }
 .MessageKO{
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    font-weight: bold;
+    background-color: white;
     color:red;
-    font-size: 1.2em;
 }
 #recharge{
     position: fixed;
@@ -114,6 +125,8 @@ h1{
     box-shadow: 0 0 13px red;
     border-color: red;
     cursor: pointer;
+    font-weight: bold;
+    font-size: 0.9em;
 
 }
 
