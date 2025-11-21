@@ -115,6 +115,8 @@ if(nomhero.value === "" || pouvoirhero.value === "" || villehero.value === "" ){
     message.innerHTML='Héro créé avec succés.'
     setTimeout(() => {
       message.innerHTML=''
+      message.classList.remove("MessageOK")
+
     }, 2000);
   }
 })
