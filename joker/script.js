@@ -36,10 +36,8 @@ fetch(apiUrl)
     <p><strong>Durabilité :</strong> ${data.powerstats.durability}/100</p>
     <p><strong>Puissance :</strong> ${data.powerstats.power}/100</p>
     <p><strong>Combat :</strong> ${data.powerstats.combat}/100</p>
-    <p><strong>Bioagraphy :</strong> ${data.biography['place-of-birth']}</p>
     <p><strong>Taille :</strong> ${data.appearance.height.join(' / ')}</p>
     <p><strong>Poids :</strong> ${data.appearance.weight.join(' / ')}</p>
-    <p><strong>occupation :</strong> ${data.work.occupation.base}</p>
     <p><strong>Groupe :</strong> ${data.connections['group-affiliation']}</p>
 
     `; 
@@ -60,3 +58,24 @@ fetch(apiUrl)
 // utilisez heroImageUrl = "https://corsproxy.io/?" + encodeURIComponent(data.image.url);
 
 // N'oubliez pas de gérer les erreurs (avec .catch())
+
+
+
+const chargerHeros = (heroName) => new Promise((resolve, reject) => {
+
+    setTimeout(() =>{
+        console. log ("j'attends 2 secondes"); 
+        if (heroName.length > 5) {// <-- la longueur du nom héros est > 5
+            resolve("Le héros est prêt !");
+        } else {
+            reject("Le héros s'est perdu !");
+        }
+    },   2000);
+});
+
+console. log ("Debut");
+
+chargerHeros ("Joker")
+    .then((result) => {console. log(result) ;})
+    .catch((error) => {console.error(error);});
+console.log ("Fin");

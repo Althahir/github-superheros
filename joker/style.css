@@ -1,19 +1,57 @@
-<<<<<<< HEAD
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-=======
->>>>>>> 09f996ba5cb7c929342df695e9c0ec760b7b6deb
+body {
+    font-family: Arial, sans-serif;
+    background-color: #1a1a1a;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
 #hero-info {
+    background: linear-gradient(135deg, #4a1a5c, #6b2e7f);
+    border-radius: 30px;
+    padding: 40px 30px;
+    max-width: 500px;
+    width: 100%;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+    text-align: center;
+}
 
+h2 {
+    color: #ffffff;
+    font-size: 32px;
+    margin-bottom: 30px;
+    font-weight: bold;
+}
 
-    text-align: center;  /* centrer le tout */
-    background-color: rgb(77, 31, 77);   /* couleur du background */
-    color: white;     /* couleur du texte  */
-    
-   
-    width: 100%;            /* longueur du bloc */
-    max-width: 600px;      /* largeur  du bloc */
-    margin: 50px auto;     /* pour centrer le bloc */
+#hero-image {
+    width: 200px;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 15px;
+    margin-bottom: 30px;
+    border: 3px solid rgba(255, 255, 255, 0.3);
+}
 
-    border-radius: 12px;   /* pour arrondir les bords */
-   
+p {
+    color: #ffffff;
+    font-size: 18px;
+    margin-bottom: 15px;
+    font-weight: bold;
+}
+
+p strong {
+    color: #ffffff;
+}
+
+p span {
+    color: #e0e0e0;
+    font-weight: normal;
 }
