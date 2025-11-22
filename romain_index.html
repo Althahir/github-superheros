@@ -4,10 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./romain_style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
     <title>Document</title>
 </head>
 <body>
-    <div id="AddHeroArray">
+    <div id="aside" class="asideClosed">
+        <img src="./assets/titre.png" alt="logo" id="logo" class="logoClosed">
+        <i class="fa-solid fa-bars menuClosed" id="menu" ><p>Menu</p></i>
+    <div id="AddHeroArray" class="AddHeroArrayClosed">
         <label for="AddHeroName">Nom :</label>
         <input type="text" id="AddHeroName" class="HeroInput" placeholder="Entrer le Nom">
         <label for="AddHeroPower">Pouvoir :</label>
@@ -15,7 +19,9 @@
         <label for="AddHeroCity">Ville :</label>
         <input type="text" id="AddHeroCity" class="HeroInput" placeholder="Entrer la ville">
         <div id="message" class="Message"></div>
-        <button id="AddHeroButton">Ajouter un hero</button>
+        <button id="AddHeroButton" class="buttonClosed">Ajouter un hero</button>
+        <button id="recharge" class="buttonClosed">Recharger les données</button>
+    </div>
     </div>
     <h1>Liste des Heros</h1>
     <div id="heroesList">
@@ -23,7 +29,6 @@
         </div>
         
     </div>
-    <button id="recharge">Recharger les données</button>
 <script src="romain_script.js"></script>
 </body>
 

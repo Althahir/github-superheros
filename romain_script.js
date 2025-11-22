@@ -4,6 +4,12 @@ const nomhero=document.getElementById("AddHeroName")
 const pouvoirhero=document.getElementById("AddHeroPower")
 const villehero=document.getElementById("AddHeroCity")
 const recharge=document.getElementById("recharge")
+const aside=document.getElementById("aside")
+const logo=document.getElementById("logo")
+const array=document.getElementById("AddHeroArray")
+const buttonAjout=document.getElementById("AddHeroButton")
+const buttonRefresh=document.getElementById("recharge")
+const menu=document.getElementById("menu")
 
 const loadHeroes = () => {
   const savedHeroes = localStorage.getItem('heroes');
@@ -126,7 +132,37 @@ recharge.addEventListener("click",()=>{
 
 })
 
+menu.addEventListener("mouseenter",()=>{
+  console.log("entré")
+  aside.classList.remove("asideClosed")
+  logo.classList.remove("logoClosed")
+  array.classList.remove("AddHeroArrayClosed")
+  buttonAjout.classList.remove("buttonClosed")
+  buttonRefresh.classList.remove("buttonClosed")
+  menu.classList.remove("menuClosed")
+  aside.classList.add("asideOpened")
+  logo.classList.add("logoOpened")
+  array.classList.add("AddHeroArrayOpened")
+  buttonAjout.classList.add("buttonOpened")
+  buttonRefresh.classList.add("buttonOpened")
+  menu.classList.add("menuOpened")
+})
+aside.addEventListener("mouseleave",()=>{
+  console.log("sorti")
+  aside.classList.add("asideClosed")
+  logo.classList.add("logoClosed")
+  array.classList.add("AddHeroArrayClosed")
+  buttonAjout.classList.add("buttonClosed")
+  buttonRefresh.classList.add("buttonClosed")
+  menu.classList.add("menuClosed")
+  aside.classList.remove("asideOpened")
+  logo.classList.remove("logoOpened")
+  array.classList.remove("AddHeroArrayOpened")
+  buttonAjout.classList.remove("buttonOpened")
+  buttonRefresh.classList.remove("buttonOpened")
+  menu.classList.remove("menuOpened")
 
+})
 
 loadHeroes()
 

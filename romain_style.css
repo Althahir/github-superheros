@@ -1,3 +1,4 @@
+
 body{
     display: flex;
     flex-direction: column;
@@ -6,23 +7,108 @@ body{
     background-color: rgb(0, 0, 0);
     color: white;
     font-size: 1.2em;
+    min-height: 98vh;
 }
 h1{
     margin: 0;
 }
-#AddHeroArray{
+.asideOpened{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* background-color: rgb(170, 170, 170); */
+    backdrop-filter: blur(50px);
+    box-shadow: 0 0 88px rgb(0, 0, 0);
+    flex-direction: column;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 110%;
+    transition: all ease-in-out 0.3s;
+
+}
+.asideClosed{
+    /* display: flex; */
+    /* justify-content: center; */
+    /* align-items: center; */
+    /* background-color: rgb(170, 170, 170); */
+    /* box-shadow: 0 0 28px rgb(170, 170, 170); */
+    /* flex-direction: column; */
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 110%;
+    width: 187px;
+    transition: all ease-in-out 0.3s;
+}
+.logoOpened{
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    width: 400px;
+    transition: all ease-in-out 0.3s;
+
+}
+.logoClosed{
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    width: 150px;
+    transition: all ease-in-out 0.3s;
+
+}
+.menuClosed{
+    visibility: visible;
+    position: absolute;
+    top: 100px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 1.5em;
+    padding: 8px;
+    border: 1px solid white;
+    border-radius: 5px;
+    text-align: center;
+    
+    p{
+        font-size: 0.8rem;
+    }
+}
+.menuOpened{
+    visibility: hidden;
+}
+.AddHeroArrayOpened{
+    visibility: visible;
     display: flex;
     flex-direction: column;
     margin: 30px;
-    border: 1px solid rgb(255, 255, 255);
+    /* border: 1px solid rgb(255, 255, 255); */
     border-radius: 30px;
-    padding: 30px;
-    background-color: grey;
+    padding: 30px;   
+    transition: visibility 0s; 
+    transition: all ease-in-out 0.3s;
+}
+.AddHeroArrayClosed{
+    visibility: hidden; 
+    /* transition: all ease-in-out 0.3s;    */
 }
 
-#AddHeroButton{
-    margin: 20px;
+.buttonOpened{
+    visibility: visible;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    border-radius: 30px;
+    transition: all 0.3s ease-in-out;
+    background-color: rgb(167, 166, 166);
+    margin: 10px;
     border: 1px solid rgb(109, 109, 109);
+    transition: visibility 0s; 
+
+
+}
+.buttonClosed{
+    visibility: hidden;
 }
 .HeroInput{
     margin-bottom: 10px;
@@ -87,7 +173,7 @@ background-image: linear-gradient(to left, #000000, #333333,#000000);    border:
     font-weight: bold;
     border-radius: 5px;
     height: 30px;
-    background-color: grey;
+    background-color: transparent;
     margin: 15px 0;
 }
 .MessageOK{
@@ -98,20 +184,12 @@ background-image: linear-gradient(to left, #000000, #333333,#000000);    border:
     background-color: white;
     color:red;
 }
-#recharge{
+/* #recharge{
     position: fixed;
     top: 20px;
     left: 20px;
-}
-#recharge, #AddHeroButton{
-    padding-left: 20px;
-    padding-right: 20px;
-    padding-top: 5px;
-    padding-bottom: 5px;
-    border-radius: 30px;
-    transition: all 0.3s ease-in-out;
-    background-color: rgb(167, 166, 166);
-}
+} */
+
 /* #recharge:hover, #AddHeroButton:hover{ */
     /* transform: scale(1.1);
     border-color: black;
