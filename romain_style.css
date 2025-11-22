@@ -110,7 +110,7 @@ background-image: linear-gradient(to left, #000000, #333333,#000000);    border:
     padding-bottom: 5px;
     border-radius: 30px;
     transition: all 0.3s ease-in-out;
-    background-color: grey;
+    background-color: rgb(167, 166, 166);
 }
 /* #recharge:hover, #AddHeroButton:hover{ */
     /* transform: scale(1.1);
