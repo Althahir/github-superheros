@@ -60,17 +60,17 @@ fetch(apiUrl)
 // N'oubliez pas de gérer les erreurs (avec .catch())
 
 
-
+// EXO 1 
 const chargerHeros = (heroName) => new Promise((resolve, reject) => {
 
     setTimeout(() =>{
-        console. log ("j'attends 2 secondes"); 
-        if (heroName.length > 5) {// <-- la longueur du nom héros est > 5
+        console. log ("j'attends 1 secondes"); 
+        if (heroName.length > 6) {
             resolve("Le héros est prêt !");
         } else {
             reject("Le héros s'est perdu !");
         }
-    },   2000);
+    },   1000);
 });
 
 console. log ("Debut");
@@ -79,3 +79,115 @@ chargerHeros ("Joker")
     .then((result) => {console. log(result) ;})
     .catch((error) => {console.error(error);});
 console.log ("Fin");
+
+
+
+// EXO 2 
+fetch(`https://superheroapi.com/api.php/${myToken}/${heroId}`)
+.then((response) => {
+        return response.json();
+    })
+.then((data) => {
+    console.log(data.biography['full-name']);
+    const nameparagraph = document.getElementById("name");
+    console.log(nameparagraph);
+    nameparagraph.innerText=data.biography['full-name']
+})  
+.catch((error) => { console.error("Erreur :", error); })
+
+
+function displayHeroes(heroes) {
+    const container = document.getElementById('heroesList');
+    container.innerHTML = '';
+    heroes.forEach(hero => {
+        const div = document.createElement('div');
+        div.className = 'hero-card';
+        div.innerHTML = `
+            <h3>${hero.name}</h3>
+            <button onclick="deleteHero(${hero.id})">Supprimer</button>
+        `;
+        container.appendChild(div);
+    });
+}
+
+
+//projet 
+
+async function loadHeroes() {
+    const savedHeroes = localStorage.getItem('heroes');
+    if (savedHeroes) {
+        displayHeroes(JSON.parse(savedHeroes));
+    } 
+    else {
+        const response = await fetch('heroes.json');
+        const heroes = await response.json();
+        localStorage.setItem('heroes', JSON.stringify(heroes));
+        displayHeroes(heroes);
+    }
+}
+localStorage.setItem('heroes', JSON.stringify(heroesArray));
+
+function displayHeroes(heroes) {
+const container = document.getElementById('heroesList');
+container.innerHTML = '';
+heroes.forEach(hero => {
+const div = document.createElement('div');
+div.className = 'hero-card';
+div.innerHTML = `
+<h3>${hero.name}</h3>
+<p>${hero.power}</p>
+<p>${hero.city}</p>
+<button onclick="deleteHero(${hero.id})">Supprimer</button>
+`;
+container.appendChild(div);
+});
+}
+
+
+async function loadHeroes() {
+        const response = await fetch('heroes.json');
+        const heroes = await response.json();
+        
+        console.log("Héros chargés depuis heroes.json :", heroes);
+        
+
+        localStorage.setItem('heroes', JSON.stringify(heroes));
+        console.log("Héros sauvegardés dans le localStorage !");
+        displayHeroes(heroes);
+    }
+loadHeroes();
+
+
+function ajt(){
+    const heroName = document.getElementById('name').value;
+    
+    const savedHeroes = localStorage.getItem('heroes');
+    const heroes = JSON.parse(savedHeroes);
+
+    const newHero = {
+        id: heroes.length + 1,
+        name: heroName,
+    };
+
+    data.push(newHero);
+    localStorage.setItem('heroes', JSON.stringify(data));
+
+    displayHeroes(data); 
+}
+
+
+function deleteHero(heroId) {
+    const savedHeroes = localStorage.getItem('heroes');
+    const heroes = JSON.parse(savedHeroes);
+    
+    const newHeroes = []; 
+    
+    for (let i = 0; i < heroes.length; i++) {
+        const hero = heroes[i]; 
+        if (hero.id !== heroId) {
+            newHeroes.push(hero); 
+        }
+    }
+    localStorage.setItem('heroes', JSON.stringify(newHeroes));
+    displayHeroes(newHeroes);
+}
