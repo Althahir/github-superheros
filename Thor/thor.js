@@ -8,6 +8,7 @@
 // ========================================
 ;
 const heroId = 659; // 👈 CHANGEZ CET ID !
+const reponse=document.getElementById("reponse")
 
 // Liste des IDs disponibles :
 // Spider-Man: 620, Batman: 70, Iron Man: 346, Superman: 644
@@ -25,7 +26,6 @@ fetch(apiUrl)
 
       const heroImageUrl = "https://corsproxy.io/?" + encodeURIComponent(data.image.url);
       document.getElementById("image").innerHTML= `<img src="${heroImageUrl}" alt="Thor">`;
-      document.getElementById("image1").innerHTML= `<img src="${heroImageUrl}" alt="Thor">`;
 
       const full_name = document.getElementById("full_name")
       full_name.innerHTML = data.biography['full-name']
@@ -39,24 +39,37 @@ fetch(apiUrl)
       const force=document.getElementById("force")
       force.innerHTML=data.powerstats.strength
 
-    ;
+    ;})
 
-    // Injection dans le DOM
-    // document.getElementById("image").innerHTML = heroHtml;
-  })
- // Affiche les données dans la console
 .catch(error => console.error('Erreur :', error)); // Gestion d'erreur
 
-// Récupérer les données du héros avec fetch()
-// et les afficher grâce à Javascript dans le HTML de cette manière :
 
-{{/* <h2>${data.name}</h2>
-<img src="${heroImageUrl}" alt="${data.name}" height="200">
-<p><strong>Nom complet :</strong> ${data.biography['full-name']}</p>
-<p><strong>Éditeur :</strong> ${data.biography.publisher}</p>
-<p><strong>Intelligence :</strong> ${data.powerstats.intelligence}/100</p>
-<p><strong>Force :</strong> ${data.powerstats.strength}/100</p> */}}
+//Exercice 1
+const dateActuelle =new Date();
+const seconde = dateActuelle.getSeconds();
+ setTimeout(()=>{
+  const chargerHeros = new Promise((resolve,reject)=>{
+    const success = (seconde % 2==0)
+    if (success) resolve(" La seconde est " + seconde +" soit pair. ✅ Le héros est prêt !");
+    else reject (" La seconde est " + seconde +" soit impair.❌ Le héros s’est perdu...") 
+    });
+    chargerHeros
+      .then((message) => reponse.innerHTML ="Résultat :" + message) //console.log("Résultat :", message))
+      .catch((erreur) => reponse.innerHTML ="Probleme :" + erreur)//console.error("Problème :", erreur))
+      .finally(() => console.log("Fin de la promesse"));
+ },2000) 
 
-// utilisez heroImageUrl = "https://corsproxy.io/?" + encodeURIComponent(data.image.url);
-
-// N'oubliez pas de gérer les erreurs (avec .catch())
+ //Exercice 2
+const newHero = {
+name: "Iron Man",
+power: "Armure high-tech"
+};
+fetch("https://reqres.in/api/users", {
+method: "POST",
+headers: { "Content-Type": "application/json" },
+body: JSON.stringify(newHero) // On transforme l’objet en texte JSON !
+})
+.then((res) => res.json())
+.then((data) => console.log("Héros créé :", data))
+.catch((err) => console.error("Erreur :", err));
+    
